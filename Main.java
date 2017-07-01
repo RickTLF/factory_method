@@ -1,5 +1,7 @@
 /**
- * 
+ *  This pattern provides one of the best ways to create an object.
+ *  An object is created without exposing the creation logic to the client
+ *  and refers to newly created object using a common interface.
  */
 package factory_method;
 
@@ -13,8 +15,15 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ShapeFactory shapeFactory = new ShapeFactory();
+		
+		Shape circle = shapeFactory.getShape("CIRCLE");
+		Shape rectangle = shapeFactory.getShape("Rectangle");
+		Shape square = shapeFactory.getShape("square");
+		
+		circle.draw();
+		rectangle.draw();
+		square.draw();
 	}
 
 }
